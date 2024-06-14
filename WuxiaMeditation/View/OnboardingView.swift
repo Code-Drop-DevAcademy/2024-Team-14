@@ -20,16 +20,18 @@ struct OnboardingView: View {
             Text("일과 삶의 마음 지킴 명상앱\n운기조식運氣調息")
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
-                .font(.system(size: 13))
+                .font(.system(size: 16))
                 .lineSpacing(6)
             Spacer()
             LargeButtonView(title: "시작") {
-                isOnboarding = true
+                withAnimation {
+                    isOnboarding = false
+                }
             }
         }
         .background(
             Image(.background)
-                .edgesIgnoringSafeArea(.top)
+                .ignoresSafeArea(edges: .top)
         )
         .padding(16)
         
