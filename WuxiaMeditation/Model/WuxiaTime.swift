@@ -55,7 +55,7 @@ enum WuxiaTime: Int, CaseIterable {
         }
     }
     
-    var titleDescription: String {
+    var titleDescriptionBeforeMeditation: String {
         switch self {
         case .state0:
             "\(self.timeDescription)입니다.\n오늘 하루를 돌아보며,\n운기조식을 통해\n탁한 기를 내보내세요."
@@ -66,5 +66,9 @@ enum WuxiaTime: Int, CaseIterable {
         default:
             "\(self.timeDescription)입니다.\n운기조식을 통해\n마음을 정돈하세요."
         }
+    }
+    
+    var titleDescriptionAfterMeditation: String {
+        "\(self.timeDescription) 운기조식을 마쳤습니다.\n일과 삶이 태극을 이루듯,\n몸과 마음의 조화를 이루는\n하루가 되길 바랍니다. "
     }
 }
