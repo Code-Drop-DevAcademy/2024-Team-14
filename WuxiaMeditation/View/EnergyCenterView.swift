@@ -10,7 +10,7 @@ import SwiftUI
 struct EnergyCenterView: View {
     @State private var isMeditation = false
     @State private var isMeditationDoneOnTime = false
-    @State private var eneryState: EneryState = .level0
+    @State private var energyState: EnergyState = .level0
     @State private var currentWuxiaTime: WuxiaTime = Date().wuxiaTime
     @State private var meditationSentence: MeditationSentence = dummyMeditationSentenceList[0]
     @State private var futureData: Date = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
@@ -51,7 +51,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(6.0)
         Spacer()
-        Text(eneryState.description)
+        Text(energyState.description)
             .font(.customBody)
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
@@ -104,8 +104,11 @@ private extension EnergyCenterView {
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 updateTimeRemaining()
                 timerCount += 1
-                if timerCount % 8 == 0 {
+                if timerCount % 10 == 0 {
                     updateMeditaionSentence()
+                }
+                if timerCount > 600 {
+                    setMeditationEnded()
                 }
             }
             isMeditation = true
@@ -114,8 +117,21 @@ private extension EnergyCenterView {
     
     func setMeditationEnded() {
         withAnimation {
+            calculateEnergyLevel()
             isMeditationDoneOnTime = true
             isMeditation = false
+        }
+    }
+    
+    func calculateEnergyLevel() {
+        if timerCount > 300 {
+            energyState = EnergyState(rawValue: energyState.rawValue - 1 >= 0 ? energyState.rawValue - 1  : 0) ?? energyState
+        } else if timerCount > 550 {
+            if energyState.rawValue - 2 >= 0 {
+                energyState = EnergyState(rawValue: energyState.rawValue - 2) ?? energyState
+            } else if energyState.rawValue - 1 >= 0 {
+                energyState = EnergyState(rawValue: energyState.rawValue - 1) ?? energyState
+            }
         }
     }
     
