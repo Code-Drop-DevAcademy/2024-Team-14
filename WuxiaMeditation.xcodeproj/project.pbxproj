@@ -20,6 +20,8 @@
 		3A5AFB8E2C1CB1780093D449 /* GapyeongHanseokbongL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8B2C1CB1780093D449 /* GapyeongHanseokbongL.otf */; };
 		3A5AFB8F2C1CB1780093D449 /* GapyeongHanseokbongB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8C2C1CB1780093D449 /* GapyeongHanseokbongB.otf */; };
 		3A5AFB902C1CB1780093D449 /* GapyeongHanseokbongR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */; };
+		3A5AFB932C1CBC190093D449 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB922C1CBC190093D449 /* Date+.swift */; };
+		3A5AFB952C1CBC350093D449 /* WuxiaTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		3A5AFB8C2C1CB1780093D449 /* GapyeongHanseokbongB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GapyeongHanseokbongB.otf; sourceTree = "<group>"; };
 		3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GapyeongHanseokbongR.otf; sourceTree = "<group>"; };
 		3A5AFB912C1CB19E0093D449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A5AFB922C1CBC190093D449 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuxiaTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5AFB6E2C1CA6FD0093D449 /* Item.swift */,
+				3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5AFB892C1CB0C10093D449 /* Font+.swift */,
+				3A5AFB922C1CBC190093D449 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -231,8 +237,10 @@
 				3A5AFB842C1CA9B20093D449 /* LargeButtonView.swift in Sources */,
 				3A5AFB7F2C1CA8490093D449 /* OnboardingView.swift in Sources */,
 				3A5AFB6F2C1CA6FD0093D449 /* Item.swift in Sources */,
+				3A5AFB952C1CBC350093D449 /* WuxiaTime.swift in Sources */,
 				3A5AFB6B2C1CA6FD0093D449 /* WuxiaMeditationApp.swift in Sources */,
 				3A5AFB862C1CAC8B0093D449 /* EnergyCenterView.swift in Sources */,
+				3A5AFB932C1CBC190093D449 /* Date+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
