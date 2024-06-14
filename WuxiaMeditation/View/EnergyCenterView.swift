@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum WuxiaTime {
+enum WuxiaTime: Int, CaseIterable {
     case state0
     case state1
     case state2
@@ -35,11 +35,40 @@ enum WuxiaTime {
         case .state9: "유시(酉時)"
         case .state10: "술시(戌時)"
         case .state11: "해시(亥時)"
-            
+        }
+    }
+    
+    var timeRange: ClosedRange<Int> {
+        switch self {
+        case .state0: 23...24
+        case .state1: 1...3
+        case .state2: 3...5
+        case .state3: 5...7
+        case .state4: 7...9
+        case .state5: 9...11
+        case .state6: 11...13
+        case .state7: 13...15
+        case .state8: 15...17
+        case .state9: 17...19
+        case .state10: 19...21
+        case .state11: 21...23
         }
     }
 }
 
+extension Date {
+    var wuxiaTime: WuxiaTime {
+        let date = Date()
+        var calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        for wuxiaTime in WuxiaTime.allCases {
+            if wuxiaTime.timeRange ~= hour {
+                return wuxiaTime
+            }
+        }
+        return .state0
+    }
+}
 
 struct EnergyCenterView: View {
     @State private var isMeditation = false
@@ -62,6 +91,9 @@ struct EnergyCenterView: View {
                     isMeditation = true
                 }
             }
+        }
+        .onAppear {
+            print(Date.now.wuxiaTime)
         }
         .background {
             Image(.background)
