@@ -9,8 +9,19 @@ import SwiftUI
 
 struct LargeButtonView: View {
     var title: String
-    var color: Color = .init(.white)
+    var color: Color = .white
+    var energyState: EnergyState = .level0
     var completion: () -> Void
+    
+    var backgroundColor: Color {
+        switch energyState {
+        case .level0: .primaryGreen
+        case .level1: .primaryBlue
+        case .level2: .primaryBrown
+        case .level3: .primaryRed
+        case .level4: .primaryGray
+        }
+    }
     
     var body: some View {
         Button {
@@ -18,7 +29,7 @@ struct LargeButtonView: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 12.0)
-                    .fill(.primaryGreen)
+                    .fill(backgroundColor)
                     .frame(width: .infinity, height: 50)
                 Text(title)
                     .font(.customBody)

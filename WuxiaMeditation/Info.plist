@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>DingTalkJinBuTi-Regular.ttf</string>
 		<string>GapyeongHanseokbongR.otf</string>
 		<string>GapyeongHanseokbongL.otf</string>
 		<string>GapyeongHanseokbongB.otf</string>

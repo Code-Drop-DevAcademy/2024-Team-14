@@ -10,7 +10,7 @@ import SwiftUI
 struct EnergyCenterView: View {
     @State private var isMeditation = false
     @State private var isMeditationDoneOnTime = false
-    @State private var energyState: EnergyState = .level0
+    @State private var energyState: EnergyState = .level2
     @State private var currentWuxiaTime: WuxiaTime = Date().wuxiaTime
     @State private var meditationSentence: MeditationSentence = dummyMeditationSentenceList[0]
     @State private var futureData: Date = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
@@ -28,10 +28,6 @@ struct EnergyCenterView: View {
             } else {
                 energyStateView
             }
-        }
-        .onAppear {
-            checkWuxiaTimeChanged()
-            updateMeditaionSentence()
         }
         .padding()
         .background {
@@ -57,7 +53,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(4.0)
             .padding(.bottom, 40)
-        LargeButtonView(title: "운기조식 시작") {
+        LargeButtonView(title: "운기조식 시작", energyState: energyState) {
             setMeditationStarted()
         }
     }
@@ -81,7 +77,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(4.0)
             .padding(.bottom, 40)
-        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료") {
+        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료", energyState: energyState) {
             setMeditationEnded()
         }
     }
