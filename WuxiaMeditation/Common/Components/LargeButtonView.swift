@@ -21,6 +21,7 @@ struct LargeButtonView: View {
                     .fill(.primaryGreen)
                     .frame(width: .infinity, height: 50)
                 Text(title)
+                    .font(.customBody)
                     .foregroundStyle(color)
             }
         }
