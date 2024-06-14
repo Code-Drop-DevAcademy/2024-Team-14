@@ -13,5 +13,5 @@ extension Font {
     static let customTitle2: Font = .custom("GapyeongHanseokbong-Regular", size: 22, relativeTo: .title2)
     static let customTitle3: Font = .custom("GapyeongHanseokbong-Regular", size: 20, relativeTo: .title3)
     static let customBody: Font = .custom("GapyeongHanseokbong-Regular", size: 17, relativeTo: .body)
-    static let customCaption: Font = .custom("GapyeongHanseokbong-Regular", size: 12, relativeTo: .caption)
+    static let customCaption: Font = .custom("GapyeongHanseokbong-Regular", size: 14, relativeTo: .caption)
 }

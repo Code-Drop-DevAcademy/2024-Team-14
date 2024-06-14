@@ -12,6 +12,10 @@ struct EnergyCenterView: View {
     @State private var isMeditationDoneOnTime = false
     @State private var eneryState: EneryState = .level0
     @State private var currentWuxiaTime: WuxiaTime = Date().wuxiaTime
+    @State private var meditationSentence: MeditationSentence = dummyMeditationSentenceList[0]
+    @State private var futureData: Date = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
+    @State private var meditationTimeRemaining: String = ""
+    @State private var timerCount: Int = 0
     
     var body: some View {
         VStack {
@@ -27,6 +31,7 @@ struct EnergyCenterView: View {
         }
         .onAppear {
             checkWuxiaTimeChanged()
+            updateMeditaionSentence()
         }
         .background {
             Image(.background)
@@ -42,7 +47,6 @@ extension EnergyCenterView {
     var energyStateView: some View {
         Text(isMeditationDoneOnTime ? currentWuxiaTime.titleDescriptionAfterMeditation : currentWuxiaTime.titleDescriptionBeforeMeditation)
             .font(.customTitle)
-            .font(.system(size: 25, weight: .bold))
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
             .lineSpacing(6.0)
@@ -60,20 +64,24 @@ extension EnergyCenterView {
     
     @ViewBuilder
     var meditaionView: some View {
-        Text(currentWuxiaTime.titleDescriptionBeforeMeditation)
-            .font(.customTitle)
-            .font(.system(size: 25, weight: .bold))
-            .foregroundStyle(.white)
-            .multilineTextAlignment(.center)
-            .lineSpacing(6.0)
+        VStack(spacing: 20) {
+            Text(meditationSentence.sentence)
+                .font(.customBody)
+            Text(meditationSentence.author)
+                .font(.customCaption)
+        }
+        .foregroundStyle(.white)
+        .multilineTextAlignment(.center)
+        .lineSpacing(6.0)
+        
         Spacer()
-        Text(eneryState.description)
+        Text("일다경동안 운기조식을 합니다.")
             .font(.customBody)
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
             .lineSpacing(4.0)
             .padding(.bottom, 40)
-        LargeButtonView(title: "운기조식 종료") {
+        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료") {
             setMeditationEnded()
         }
     }
@@ -90,6 +98,16 @@ private extension EnergyCenterView {
     
     func setMeditationStarted() {
         withAnimation {
+            futureData = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
+            updateTimeRemaining()
+            timerCount = 0
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                updateTimeRemaining()
+                timerCount += 1
+                if timerCount % 8 == 0 {
+                    updateMeditaionSentence()
+                }
+            }
             isMeditation = true
         }
     }
@@ -98,6 +116,19 @@ private extension EnergyCenterView {
         withAnimation {
             isMeditationDoneOnTime = true
             isMeditation = false
+        }
+    }
+    
+    func updateTimeRemaining() {
+        let remaining = Calendar.current.dateComponents([.minute, .second], from: Date(), to: futureData)
+        let minute = remaining.minute ?? 0
+        let second = remaining.second ?? 0
+        meditationTimeRemaining = "\(minute)분 \(second)초 후"
+    }
+    
+    func updateMeditaionSentence() {
+        withAnimation {
+            meditationSentence = dummyMeditationSentenceList.randomElement() ?? dummyMeditationSentenceList[0]
         }
     }
 }
