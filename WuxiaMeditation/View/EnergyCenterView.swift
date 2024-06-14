@@ -33,11 +33,11 @@ struct EnergyCenterView: View {
             checkWuxiaTimeChanged()
             updateMeditaionSentence()
         }
-        .background {
-            Image(.background)
-                .ignoresSafeArea(edges: .top)
-        }
         .padding()
+        .background {
+            PlayerView(energyState: $energyState)
+                .ignoresSafeArea()
+        }
     }
 }
 
