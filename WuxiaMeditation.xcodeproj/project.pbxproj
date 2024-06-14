@@ -53,10 +53,10 @@
 		3A5AFB692C1CA6FD0093D449 /* WuxiaMeditation */ = {
 			isa = PBXGroup;
 			children = (
-				3A5AFB6A2C1CA6FD0093D449 /* WuxiaMeditationApp.swift */,
-				3A5AFB6C2C1CA6FD0093D449 /* ContentView.swift */,
-				3A5AFB6E2C1CA6FD0093D449 /* Item.swift */,
-				3A5AFB702C1CA6FE0093D449 /* Assets.xcassets */,
+				3A5AFB7C2C1CA7F90093D449 /* Core */,
+				3A5AFB7B2C1CA7F50093D449 /* Model */,
+				3A5AFB7A2C1CA7F00093D449 /* View */,
+				3A5AFB7D2C1CA8040093D449 /* Resource */,
 				3A5AFB722C1CA6FE0093D449 /* Preview Content */,
 			);
 			path = WuxiaMeditation;
@@ -68,6 +68,38 @@
 				3A5AFB732C1CA6FE0093D449 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A5AFB7A2C1CA7F00093D449 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A5AFB7B2C1CA7F50093D449 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AFB6E2C1CA6FD0093D449 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A5AFB7C2C1CA7F90093D449 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AFB6A2C1CA6FD0093D449 /* WuxiaMeditationApp.swift */,
+				3A5AFB6C2C1CA6FD0093D449 /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3A5AFB7D2C1CA8040093D449 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AFB702C1CA6FE0093D449 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
