@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EnergyCenterView: View {
     @State private var isMeditation = false
-    @State private var subDescription = "단전이 많이 탁합니다."
+    @State private var eneryState: EneryState = .level4
     @State private var currentWuxiaTime: WuxiaTime = Date.now.wuxiaTime
     
     var body: some View {
@@ -49,7 +49,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(6.0)
         Spacer()
-        Text(subDescription)
+        Text(eneryState.description)
             .font(.customBody)
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
@@ -66,7 +66,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(6.0)
         Spacer()
-        Text(subDescription)
+        Text(eneryState.description)
             .font(.customBody)
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)

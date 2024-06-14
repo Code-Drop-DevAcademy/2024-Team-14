@@ -22,6 +22,7 @@
 		3A5AFB902C1CB1780093D449 /* GapyeongHanseokbongR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */; };
 		3A5AFB932C1CBC190093D449 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB922C1CBC190093D449 /* Date+.swift */; };
 		3A5AFB952C1CBC350093D449 /* WuxiaTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */; };
+		3A5AFB972C1CBD5F0093D449 /* EneryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB962C1CBD5F0093D449 /* EneryState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3A5AFB912C1CB19E0093D449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A5AFB922C1CBC190093D449 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuxiaTime.swift; sourceTree = "<group>"; };
+		3A5AFB962C1CBD5F0093D449 /* EneryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EneryState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				3A5AFB6E2C1CA6FD0093D449 /* Item.swift */,
 				3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */,
+				3A5AFB962C1CBD5F0093D449 /* EneryState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				3A5AFB6B2C1CA6FD0093D449 /* WuxiaMeditationApp.swift in Sources */,
 				3A5AFB862C1CAC8B0093D449 /* EnergyCenterView.swift in Sources */,
 				3A5AFB932C1CBC190093D449 /* Date+.swift in Sources */,
+				3A5AFB972C1CBD5F0093D449 /* EneryState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
