@@ -17,6 +17,7 @@ struct EnergyCenterView: View {
                 .foregroundStyle(.white)
             Spacer()
             Text(description)
+                .font(.customLargeTitle)
                 .font(.system(size: 25, weight: .bold))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
@@ -31,6 +32,14 @@ struct EnergyCenterView: View {
             LargeButtonView(title: "운기조식 시작") {
                 
             }
+        }
+        .onAppear {
+            for family: String in UIFont.familyNames {
+                            print(family)
+                            for names : String in UIFont.fontNames(forFamilyName: family){
+                                print("=== \(names)")
+                            }
+                        }
         }
         .background {
             Image(.background)

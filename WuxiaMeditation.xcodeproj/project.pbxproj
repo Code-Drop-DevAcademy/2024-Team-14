@@ -16,6 +16,10 @@
 		3A5AFB812C1CA9090093D449 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB802C1CA9090093D449 /* Color.xcassets */; };
 		3A5AFB842C1CA9B20093D449 /* LargeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB832C1CA9B20093D449 /* LargeButtonView.swift */; };
 		3A5AFB862C1CAC8B0093D449 /* EnergyCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB852C1CAC8B0093D449 /* EnergyCenterView.swift */; };
+		3A5AFB8A2C1CB0C10093D449 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB892C1CB0C10093D449 /* Font+.swift */; };
+		3A5AFB8E2C1CB1780093D449 /* GapyeongHanseokbongL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8B2C1CB1780093D449 /* GapyeongHanseokbongL.otf */; };
+		3A5AFB8F2C1CB1780093D449 /* GapyeongHanseokbongB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8C2C1CB1780093D449 /* GapyeongHanseokbongB.otf */; };
+		3A5AFB902C1CB1780093D449 /* GapyeongHanseokbongR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,11 @@
 		3A5AFB802C1CA9090093D449 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		3A5AFB832C1CA9B20093D449 /* LargeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButtonView.swift; sourceTree = "<group>"; };
 		3A5AFB852C1CAC8B0093D449 /* EnergyCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCenterView.swift; sourceTree = "<group>"; };
+		3A5AFB892C1CB0C10093D449 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		3A5AFB8B2C1CB1780093D449 /* GapyeongHanseokbongL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GapyeongHanseokbongL.otf; sourceTree = "<group>"; };
+		3A5AFB8C2C1CB1780093D449 /* GapyeongHanseokbongB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GapyeongHanseokbongB.otf; sourceTree = "<group>"; };
+		3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GapyeongHanseokbongR.otf; sourceTree = "<group>"; };
+		3A5AFB912C1CB19E0093D449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,7 @@
 		3A5AFB692C1CA6FD0093D449 /* WuxiaMeditation */ = {
 			isa = PBXGroup;
 			children = (
+				3A5AFB912C1CB19E0093D449 /* Info.plist */,
 				3A5AFB822C1CA9A30093D449 /* Common */,
 				3A5AFB7C2C1CA7F90093D449 /* Core */,
 				3A5AFB7B2C1CA7F50093D449 /* Model */,
@@ -108,6 +118,9 @@
 		3A5AFB7D2C1CA8040093D449 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3A5AFB8C2C1CB1780093D449 /* GapyeongHanseokbongB.otf */,
+				3A5AFB8B2C1CB1780093D449 /* GapyeongHanseokbongL.otf */,
+				3A5AFB8D2C1CB1780093D449 /* GapyeongHanseokbongR.otf */,
 				3A5AFB702C1CA6FE0093D449 /* Assets.xcassets */,
 				3A5AFB802C1CA9090093D449 /* Color.xcassets */,
 			);
@@ -117,9 +130,26 @@
 		3A5AFB822C1CA9A30093D449 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3A5AFB832C1CA9B20093D449 /* LargeButtonView.swift */,
+				3A5AFB882C1CB0B50093D449 /* Extension */,
+				3A5AFB872C1CB0A70093D449 /* Components */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3A5AFB872C1CB0A70093D449 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AFB832C1CA9B20093D449 /* LargeButtonView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3A5AFB882C1CB0B50093D449 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AFB892C1CB0C10093D449 /* Font+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +210,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5AFB902C1CB1780093D449 /* GapyeongHanseokbongR.otf in Resources */,
+				3A5AFB8F2C1CB1780093D449 /* GapyeongHanseokbongB.otf in Resources */,
+				3A5AFB8E2C1CB1780093D449 /* GapyeongHanseokbongL.otf in Resources */,
 				3A5AFB742C1CA6FE0093D449 /* Preview Assets.xcassets in Resources */,
 				3A5AFB712C1CA6FE0093D449 /* Assets.xcassets in Resources */,
 				3A5AFB812C1CA9090093D449 /* Color.xcassets in Resources */,
@@ -194,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5AFB6D2C1CA6FD0093D449 /* ContentView.swift in Sources */,
+				3A5AFB8A2C1CB0C10093D449 /* Font+.swift in Sources */,
 				3A5AFB842C1CA9B20093D449 /* LargeButtonView.swift in Sources */,
 				3A5AFB7F2C1CA8490093D449 /* OnboardingView.swift in Sources */,
 				3A5AFB6F2C1CA6FD0093D449 /* Item.swift in Sources */,
@@ -335,6 +369,7 @@
 				DEVELOPMENT_TEAM = JXHZ6FLB7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WuxiaMeditation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -364,6 +399,7 @@
 				DEVELOPMENT_TEAM = JXHZ6FLB7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WuxiaMeditation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
