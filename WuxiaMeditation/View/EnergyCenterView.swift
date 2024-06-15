@@ -7,13 +7,20 @@
 
 import SwiftUI
 
+private let standardMinute: Int = 1
 struct EnergyCenterView: View {
-    @State private var isMeditation = false
+    enum MeditationState {
+        case notStarted
+        case preparing
+        case progressing
+    }
+    @State private var meditationState: MeditationState = .notStarted
     @State private var isMeditationDoneOnTime = false
-    @State private var energyState: EnergyState = .level2
+    @State private var isShowEndMeditationAlert = false
+    @State private var energyState: EnergyState = .level0
     @State private var currentWuxiaTime: WuxiaTime = Date().wuxiaTime
     @State private var meditationSentence: MeditationSentence = dummyMeditationSentenceList[0]
-    @State private var futureData: Date = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
+    @State private var futureData: Date = Calendar.current.date(byAdding: .minute, value: standardMinute, to: Date()) ?? Date()
     @State private var meditationTimeRemaining: String = ""
     @State private var timerCount: Int = 0
     
@@ -23,13 +30,22 @@ struct EnergyCenterView: View {
                 .font(.title3)
                 .foregroundStyle(.white)
             Spacer()
-            if isMeditation {
-                meditaionView
-            } else {
-                energyStateView
+            switch meditationState {
+            case .notStarted: energyStateView
+            case .progressing: meditaionView
+            default: HStack { Spacer() }
             }
         }
         .padding()
+        .alert(isPresented: $isShowEndMeditationAlert) {
+            Alert(
+                title: Text("운기조식을 종료합니다."),
+                primaryButton:
+                        .destructive(Text("종료"), action: {
+                    setMeditationEnded()
+                }),
+                secondaryButton: .cancel(Text("취소")))
+        }
         .background {
             PlayerView(energyState: $energyState)
                 .ignoresSafeArea()
@@ -80,13 +96,17 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(4.0)
             .padding(.bottom, 40)
-        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료", color: .white.opacity(0.5), energyState: energyState) {
-            setMeditationEnded()
+        LargeButtonView(title: isFinishedMeditation ? "운기조식 종료" : "\(meditationTimeRemaining) 뒤 종료", color: .white.opacity(isFinishedMeditation ? 1 : 0.5), energyState: energyState) {
+            isShowEndMeditationAlert = true
         }
     }
 }
 
 private extension EnergyCenterView {
+    var isFinishedMeditation: Bool {
+        standardMinute * 60 > timerCount ? false : true
+    }
+    
     func checkWuxiaTimeChanged() {
         let newDate = Date.now
         if currentWuxiaTime != newDate.wuxiaTime {
@@ -97,7 +117,7 @@ private extension EnergyCenterView {
     
     func setMeditationStarted() {
         withAnimation {
-            futureData = Calendar.current.date(byAdding: .minute, value: 10, to: Date()) ?? Date()
+            futureData = Calendar.current.date(byAdding: .minute, value: standardMinute, to: Date()) ?? Date()
             updateTimeRemaining()
             timerCount = 0
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -106,11 +126,13 @@ private extension EnergyCenterView {
                 if timerCount % 10 == 0 {
                     updateMeditaionSentence()
                 }
-                if timerCount > 600 {
-                    setMeditationEnded()
-                }
             }
-            isMeditation = true
+            meditationState = .preparing
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                meditationState = .progressing
+            }
         }
     }
     
@@ -118,14 +140,19 @@ private extension EnergyCenterView {
         withAnimation {
             calculateEnergyLevel()
             isMeditationDoneOnTime = true
-            isMeditation = false
+            meditationState = .preparing
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                meditationState = .notStarted
+            }
         }
     }
     
     func calculateEnergyLevel() {
-        if timerCount > 300 {
+        if timerCount > standardMinute * 60 / 2 {
             energyState = EnergyState(rawValue: energyState.rawValue - 1 >= 0 ? energyState.rawValue - 1  : 0) ?? energyState
-        } else if timerCount > 550 {
+        } else if timerCount > standardMinute * 60 {
             if energyState.rawValue - 2 >= 0 {
                 energyState = EnergyState(rawValue: energyState.rawValue - 2) ?? energyState
             } else if energyState.rawValue - 1 >= 0 {
