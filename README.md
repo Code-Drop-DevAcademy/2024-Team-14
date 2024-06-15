@@ -42,9 +42,9 @@
 ## 시간에 관련된 무협 용어
 ![Frame 15](https://github.com/Code-Drop-DevAcademy/2024-Team-14/assets/105622985/26299fbe-fc9c-40b7-a093-d3df3bea244b)
 
-## 팀
+## 팀 최선과 최대
 
-> 즐거운 팀 문화를 만들어 준 팀원들에게 감사합니다. 
+> 최대의 팀 문화를 만들어 준 팀원들에게 감사합니다. 
 
 |Austin|
 |:-:|
