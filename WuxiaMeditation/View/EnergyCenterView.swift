@@ -33,6 +33,9 @@ struct EnergyCenterView: View {
         .background {
             PlayerView(energyState: $energyState)
                 .ignoresSafeArea()
+                .onAppear {
+                    AudioPlayManager.shared.playSound(sound: "meditation")
+                }
         }
     }
 }
