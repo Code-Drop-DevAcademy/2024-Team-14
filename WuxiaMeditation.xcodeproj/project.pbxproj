@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A5AFB6B2C1CA6FD0093D449 /* WuxiaMeditationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB6A2C1CA6FD0093D449 /* WuxiaMeditationApp.swift */; };
 		3A5AFB6D2C1CA6FD0093D449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB6C2C1CA6FD0093D449 /* ContentView.swift */; };
-		3A5AFB6F2C1CA6FD0093D449 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB6E2C1CA6FD0093D449 /* Item.swift */; };
 		3A5AFB712C1CA6FE0093D449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB702C1CA6FE0093D449 /* Assets.xcassets */; };
 		3A5AFB742C1CA6FE0093D449 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB732C1CA6FE0093D449 /* Preview Assets.xcassets */; };
 		3A5AFB7F2C1CA8490093D449 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB7E2C1CA8490093D449 /* OnboardingView.swift */; };
@@ -38,7 +37,6 @@
 		3A5AFB672C1CA6FD0093D449 /* 운기조식.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "운기조식.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5AFB6A2C1CA6FD0093D449 /* WuxiaMeditationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuxiaMeditationApp.swift; sourceTree = "<group>"; };
 		3A5AFB6C2C1CA6FD0093D449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3A5AFB6E2C1CA6FD0093D449 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3A5AFB702C1CA6FE0093D449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A5AFB732C1CA6FE0093D449 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A5AFB7E2C1CA8490093D449 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		3A5AFB7B2C1CA7F50093D449 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A5AFB6E2C1CA6FD0093D449 /* Item.swift */,
 				3A5AFB942C1CBC350093D449 /* WuxiaTime.swift */,
 				3A5AFB962C1CBD5F0093D449 /* EneryState.swift */,
 				3A5AFB982C1CC46B0093D449 /* MeditationSentence.swift */,
@@ -283,7 +280,6 @@
 				3A5AFB842C1CA9B20093D449 /* LargeButtonView.swift in Sources */,
 				3A5AFB992C1CC46B0093D449 /* MeditationSentence.swift in Sources */,
 				3A5AFB7F2C1CA8490093D449 /* OnboardingView.swift in Sources */,
-				3A5AFB6F2C1CA6FD0093D449 /* Item.swift in Sources */,
 				3A5AFB952C1CBC350093D449 /* WuxiaTime.swift in Sources */,
 				3A5AFB6B2C1CA6FD0093D449 /* WuxiaMeditationApp.swift in Sources */,
 				3A5AFB862C1CAC8B0093D449 /* EnergyCenterView.swift in Sources */,
@@ -347,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

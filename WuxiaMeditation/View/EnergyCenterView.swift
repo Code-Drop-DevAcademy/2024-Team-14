@@ -65,7 +65,7 @@ extension EnergyCenterView {
     var meditaionView: some View {
         VStack(spacing: 20) {
             Text(meditationSentence.sentence)
-                .font(.customBody)
+                .font(.customTitle3)
             Text(meditationSentence.author)
                 .font(.customCaption)
         }
@@ -80,7 +80,7 @@ extension EnergyCenterView {
             .multilineTextAlignment(.center)
             .lineSpacing(4.0)
             .padding(.bottom, 40)
-        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료", energyState: energyState) {
+        LargeButtonView(title: "\(meditationTimeRemaining) 뒤 종료", color: .white.opacity(0.5), energyState: energyState) {
             setMeditationEnded()
         }
     }

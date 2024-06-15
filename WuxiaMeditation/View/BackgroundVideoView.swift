@@ -41,18 +41,14 @@ class LoopingPlayerUIView: UIView {
     
     func updateVideoSource(_ energyState: EnergyState){
         playerLooper = nil
-        let fileUrl = Bundle.main.url(forResource: "newBackground0", withExtension: "mp4")!
+        let fileUrl = Bundle.main.url(forResource: "newBackground\(energyState.rawValue)", withExtension: "mp4")!
         let asset = AVAsset(url: fileUrl)
         let item = AVPlayerItem(asset: asset)
-        // Setup the player
         let player = AVQueuePlayer()
         playerLayer.player = player
         playerLayer.videoGravity = .resizeAspectFill
         layer.addSublayer(playerLayer)
-        // Create a new player looper with the queue player and template item
-        
         playerLooper = AVPlayerLooper(player: player, templateItem: item)
-        // Start the movie
         player.play()
     }
 }
